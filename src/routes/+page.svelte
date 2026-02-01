@@ -7,68 +7,89 @@
 
     onMount(() => {
         showTashio = true;
-
-        const originalTitle = "Finding Focus";
-        const observer = new MutationObserver((mutations) => {
-            if (document.title !== originalTitle) {
-                document.title = originalTitle;
-            }
-        });
-
-        const titleElement = document.querySelector('title');
-        if (titleElement) {
-            observer.observe(titleElement, {
-                childList: true,
-                characterData: true,
-                subtree: true
-            });
-        }
-
-        return () => {
-            observer.disconnect();
-        };
     });
 </script>
 
-<div class="relative w-full h-screen">
+<style>
+    :global(:root) {
+        --header-color: rgb(150, 200, 255);
+    }
+</style>
+
+<div class="relative w-full min-h-screen">
     <img src="volcano.webp" alt="Volcano" class="fixed inset-0 w-full h-full object-cover -z-10">
-    <div class="fixed inset-0 bg-gradient-to-b from-purple-800/60 to-[#1a0f2e] pointer-events-none -z-5"></div>
+    <div class="fixed inset-0 bg-gradient-to-b from-purple-900/75 to-[#1a0f2e] pointer-events-none -z-5"></div>
+
     <div class="relative z-10">
-        <div class="relative flex justify-center h-24 md:h-42 lg:h-56 inset-0 bg-gradient-to-b from-purple-950/80 to-purple-900/30">
+        <!-- Header - unchanged -->
+        <div class="relative flex justify-center h-24 md:h-42 lg:h-56 inset-0">
             <img src="tashiotempologo.webp" alt="Logo">
             <img src="tashio.webp" alt="Logo">
         </div>
-        <div class="flex flex-col-reverse md:grid md:grid-cols-2 md:gap-8 items-start mb-4">
-            <div class="mx-2 md:mb-0 md:ml-8">
-                <p class="text-base mb-4 text-blue-100 mt-4">
-                    <a href="https://www.github.com/findingfocus/tashio" target="_blank" rel="noopener noreferrer" class="link text-cyan-500 hover:text-cyan-400 transition duration-150">Tashio Tempo</a>
-                    is my new top-down game filled with adventure, magic, and music. The current version features geckos, bats, spell-casting abilities, and a dungeon to explore!
-                </p>
 
-                <div class="mt-4 text-center p-4 bg-gray-900 border border-blue-800/30 shadow shadow-blue-900/20 rounded-xl max-w-md md:max-w-none">
-                    <h3 class="font-bold mb-3 text-white">CONTROLS</h3>
-                    <div class="grid grid-cols-2 gap-2 text-blue-100 font-mono">
-                        <div>'WASD'</div><div>DPAD</div>
-                        <div>'P or SPACE'</div><div>A BUTTON</div>
-                        <div>'O or SHIFT'</div><div>B BUTTON</div>
-                        <div>'`'</div><div>SELECT BUTTON</div>
-                        <div>'TAB'</div><div>START BUTTON</div>
-                        <div>'M'</div><div>MUSIC TOGGLE</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="flex flex-col items-center w-full md:w-auto">
-                <div class="w-full max-w-md">
-                    {#if browser && showTashio}
-                        <Tashio />
-                    {:else}
-                        <div class="flex justify-center items-center bg-gray-900 rounded-lg text-2xl p-4 h-[400px]">
-                            <p class="text-blue-300">Loading Tashio Tempo...</p>
+        <!-- Main Content -->
+        <main class="relative z-10 max-w-7xl mx-auto px-4 pt-0 md:pt-0">
+            <!-- Centered wrapper for game + controls -->
+            <div class="max-w-6xl mx-auto">
+                <div class="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-8 xl:gap-12 mt-0 md:mt-4 lg:mt-8">
+                    <!-- Game Display -->
+                    <div class="order-1 lg:order-2 flex justify-center w-full lg:w-auto lg:max-w-[65%]">
+                        <div class="w-full h-[500px] md:h-[600px] lg:h-[700px]">
+                            {#if browser && showTashio}
+                                <Tashio />
+                            {/if}
                         </div>
-                    {/if}
+                    </div>
+
+                    <!-- Controls - adjusted top padding per breakpoint -->
+                    <section class="order-2 lg:order-1 space-y-4 flex flex-col items-center lg:items-start w-full lg:w-auto lg:min-w-[320px] pt-18 md:pt-0">
+                        <h2 class="text-2xl font-bold text-[var(--header-color)] mb-6 text-center lg:text-left">Controls</h2>
+                        <div class="grid grid-cols-2 gap-4 w-full max-w-md">                            <div class="bg-gradient-to-br from-blue-900/40 to-blue-900/30 backdrop-blur border border-blue-500/30 rounded-lg p-4 transition duration-200">
+                                <div class="text-[var(--header-color)] font-mono font-bold text-lg">WASD</div>
+                                <div class="text-gray-300 text-sm mt-1">Movement</div>
+                            </div>
+                            <div class="bg-gradient-to-br from-blue-900/40 to-blue-900/30 backdrop-blur border border-blue-500/30 rounded-lg p-4 transition duration-200">
+                                <div class="text-[var(--header-color)] font-mono font-bold text-lg">M</div>
+                                <div class="text-gray-300 text-sm mt-1">Toggle Music</div>
+                            </div>
+                            <div class="bg-gradient-to-br from-blue-900/40 to-blue-900/30 backdrop-blur border border-blue-500/30 rounded-lg p-4 transition duration-200">
+                                <div class="text-[var(--header-color)] font-mono font-bold text-lg">SPACE</div>
+                                <div class="text-gray-300 text-sm mt-1">A Button</div>
+                            </div>
+                            <div class="bg-gradient-to-br from-blue-900/40 to-blue-900/30 backdrop-blur border border-blue-500/30 rounded-lg p-4 transition duration-200">
+                                <div class="text-[var(--header-color)] font-mono font-bold text-lg">SHIFT</div>
+                                <div class="text-gray-300 text-sm mt-1">B Button</div>
+                            </div>
+                            <div class="bg-gradient-to-br from-blue-900/40 to-blue-900/30 backdrop-blur border border-blue-500/30 rounded-lg p-4 transition duration-200">
+                                <div class="text-[var(--header-color)] font-mono font-bold text-lg">Tab</div>
+                                <div class="text-gray-300 text-sm mt-1">Start Button</div>
+                            </div>
+                            <div class="bg-gradient-to-br from-blue-900/40 to-blue-900/30 backdrop-blur border border-blue-500/30 rounded-lg p-4 transition duration-200">
+                                <div class="text-[var(--header-color)] font-mono font-bold text-lg">Ctrl</div>
+                                <div class="text-gray-300 text-sm mt-1">Select Button</div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </div>
-        </div>
+
+            <!-- About Section -->
+            <section class="space-y-4 mt-12 lg:mt-0 translate-y-0 md:-translate-y-20">
+                <h2 class="text-2xl font-bold text-[var(--header-color)] mb-6 text-center">About</h2>
+                <div class="bg-gradient-to-br from-blue-900/40 to-blue-900/30 backdrop-blur border border-blue-500/30 rounded-lg p-6 transition duration-200">
+                    <p class="text-blue-100/90 leading-relaxed">
+                        <a href="https://www.github.com/findingfocus/tashio" target="_blank" rel="noopener noreferrer" class="text-[var(--header-color)] hover:text-cyan-300 transition duration-150 font-semibold">
+                            Tashio Tempo
+                        </a>
+                        is an immersive top-down game featuring geckos, bats, spell-casting abilities, and a dungeon waiting to be explored.
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="relative z-10 border-t border-purple-500/20 mt-16 py-8 text-center text-gray-400/60">
+            <p>© 2026 Finding Focus Productions</p>
+        </footer>
     </div>
 </div>

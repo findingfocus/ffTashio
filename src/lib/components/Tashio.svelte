@@ -178,7 +178,7 @@
 
 {#if browser}
     <div class="flex flex-col items-center justify-center mx-auto my-0 max-h-[574px]">
-        <canvas id="loadingCanvas" on:contextmenu={preventContextMenu} width="320" height="580" class="block translate-y-17"></canvas>
+        <canvas id="loadingCanvas" on:contextmenu={preventContextMenu} width="320" height="580" class="block translate-y-19"></canvas>
         <canvas id="canvas" class="invisible block my-0 p-0" on:contextmenu={preventContextMenu}></canvas>
     </div>
 {:else}
