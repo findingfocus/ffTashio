@@ -74,15 +74,44 @@
             </div>
 
             <!-- About Section -->
-            <section class="space-y-4 mt-12 lg:mt-0 translate-y-0 md:-translate-y-20">
-                <h2 class="text-2xl font-bold text-[var(--header-color)] mb-6 text-center">About</h2>
-                <div class="bg-gradient-to-br from-blue-900/40 to-blue-900/30 backdrop-blur border border-blue-500/30 rounded-lg p-6 transition duration-200">
-                    <p class="text-blue-100/90 leading-relaxed">
-                        <a href="https://www.github.com/findingfocus/tashio" target="_blank" rel="noopener noreferrer" class="text-[var(--header-color)] hover:text-cyan-300 transition duration-150 font-semibold">
-                            Tashio Tempo
-                        </a>
-                        is an immersive top-down game featuring geckos, bats, spell-casting abilities, and a dungeon waiting to be explored.
-                    </p>
+            <section class="space-y-4 mt-12 lg:mt-0 translate-y-0 md:-translate-y-0 lg:-translate-y-22 px-0 md:px-4 lg:px-40">
+                <h2 class="text-2xl font-bold text-[var(--header-color)] mb-6 text-center">About the game</h2>
+                <div class="bg-gradient-to-br from-blue-900/40 to-blue-900/30 backdrop-blur border border-blue-500/30 rounded-lg p-4 md:p-8 transition duration-200">
+                    <div class="space-y-12">
+                        <p class="text-blue-100/90 leading-relaxed text-lg">
+                            Tashio Tempo is a top-down adventure game filled with magic and music! Learn to wield powerful spells that affect the environment around you.
+                        </p>
+
+                        <div class="border-l-0 md:border-l-4 border-[var(--header-color)] md:pl-6 pl-0 space-y-4">  <!-- ← changed here -->
+                            <h3 class="text-xl font-bold text-[var(--header-color)] uppercase tracking-wider">Discover Old Magic</h3>
+                            <p class="text-blue-100/80 leading-relaxed">Uncover ancient spells and unlock mystical abilities to overcome the challenges ahead.</p>
+                            <video autoplay muted loop playsinline class="w-full rounded-lg pointer-events-none">
+                                <source src="/BANNER1.mp4" type="video/mp4">
+                            </video>
+                        </div>
+
+                        <div class="border-l-0 md:border-l-4 border-[var(--header-color)] md:pl-6 pl-0 space-y-4">  <!-- ← changed here -->
+                            <h3 class="text-xl font-bold text-[var(--header-color)] uppercase tracking-wider">Master Your Lute</h3>
+                            <p class="text-blue-100/80 leading-relaxed">Unique "Lute" system: Freely play music, or play songs from ancient tablature to interact with the world.</p>
+                            <video autoplay muted loop playsinline class="w-full rounded-lg pointer-events-none">
+                                <source src="/BANNER2.mp4" type="video/mp4">
+                            </video>
+                        </div>
+
+                        <div class="border-l-0 md:border-l-4 border-[var(--header-color)] md:pl-6 pl-0 space-y-4">  <!-- ← changed here -->
+                            <h3 class="text-xl font-bold text-[var(--header-color)] uppercase tracking-wider">Banish The Corruption</h3>
+                            <p class="text-blue-100/80 leading-relaxed">Spell casting will cleanse creatures of their corruption, however they will remain dangerous until your music clears the corruption in each biome.</p>
+                            <video autoplay muted loop playsinline class="w-full rounded-lg pointer-events-none">
+                                <source src="/BANNER3.mp4" type="video/mp4">
+                            </video>
+                        </div>
+
+                        <div class="border-t-2 border-blue-500/30 pt-8">
+                            <a href="https://www.github.com/findingfocus/tashio" target="_blank" rel="noopener noreferrer" class="text-[var(--header-color)] hover:text-cyan-300 transition duration-150 font-semibold text-lg">
+                                Source Code on GitHub →
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>
