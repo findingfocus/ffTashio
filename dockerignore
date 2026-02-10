@@ -1,0 +1,54 @@
+# Dependencies
+node_modules
+.pnpm-store
+
+# Build outputs
+build
+.svelte-kit
+dist
+
+# Git
+.git
+.gitignore
+
+# IDE and editor files
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing
+coverage
+.nyc_output
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Misc
+*.md
+!README.md
+LICENSE
+.prettierrc
+.eslintrc
+.eslintignore
+.prettierignore
+
+# Docker
+Dockerfile
+.dockerignore
+docker-compose.yml
