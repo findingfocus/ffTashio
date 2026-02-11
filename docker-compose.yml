@@ -10,6 +10,7 @@ services:
     ports:
       - "127.0.0.1:3002:3000"
     environment:
+      - "3000:3000"
       - NODE_ENV=production
       - PORT=3000
     # Uncomment if you need to persist data
