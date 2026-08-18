@@ -5,3 +5,4 @@ frontend/.env
 .env.*
 !.env.example
 .svelte-kit/
+.envrc

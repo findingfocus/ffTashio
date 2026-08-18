@@ -46,8 +46,5 @@
   },
   "keywords": [
     "svelte"
-  ],
-  "pnpm": {
-    "onlyBuiltDependencies": ["esbuild"]
-  }
+  ]
 }
