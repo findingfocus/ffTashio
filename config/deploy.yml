@@ -1,0 +1,23 @@
+service: fftashio
+image: findingfocusdev/fftashio
+
+servers:
+  web:
+    - 216.128.140.9
+
+proxy:
+  ssl: true
+  host: tashio.dev
+  app_port: 3000
+
+registry:
+  username: findingfocusdev
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+
+builder:
+  arch: amd64
+  driver: docker
+
+ssh:
+  user: findingfocus
