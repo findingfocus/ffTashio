@@ -8,7 +8,7 @@ servers:
 proxy:
   ssl: true
   host: tashio.dev
-  app_port: 3000
+  app_port: 80
   healthcheck:
     path: /
     interval: 3

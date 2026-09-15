@@ -7,7 +7,4 @@ services:
     container_name: fftashio
     restart: unless-stopped
     ports:
-      - "3004:3000"
-    environment:
-      - NODE_ENV=production
-      - PORT=3000
+      - "3004:80"
